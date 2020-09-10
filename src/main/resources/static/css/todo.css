@@ -1,0 +1,15 @@
+
+.pt-3-half {
+padding-top: 1.4rem;
+}
+.btn-primary {
+    margin: 10px 20px;
+}
+.form-group {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+#btnAdd{
+    margin: 0 0;
+}
