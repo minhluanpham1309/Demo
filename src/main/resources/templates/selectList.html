@@ -24,7 +24,7 @@
                         </label>
                         <div id ="from" class="col-sm-3 my-1">
                             <select  id="inputFrom" class="form-control">
-                                <option th:each="province:$(provinces)" th:value="${province.id}" th:text="${province.name}"></option>
+                                <option th:each="province: $(provinces)" th:value="${province.id}" th:text="${province.name}"></option>
                             </select>
                         </div>
                         
@@ -44,40 +44,7 @@
 
                 </form>
             </div>
-            <div class="card-body">
-                <div id="table" class="table-editable">
-                    <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
-                                class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
-                    <table class="table table-bordered table-responsive-md table-striped text-center">
-                        <thead>
-                            <tr>
-                                <th class="text-center">Id</th>
-                                <th class="text-center">Title</th>
-                                <th class="text-center">Detail</th>
-                                <th class="text-center">User</th>
-                                <th class="text-center">OldPrice</th>
-                                <th class="text-center">newPrince</th>
-                                <th class="text-center">Remove</th>
-                            </tr>
-                        </thead>
-                        <tbody >
-                            <tr th:each = "todo : ${todoList}">
-                                <td th:text ="*{todo.getId()}"class="pt-3-half" contenteditable="true">Aurelia Vega</td>
-                                <td th:text ="*{todo.getTitle()}" class="pt-3-half" contenteditable="true"></td>
-                                <td th:text ="*{todo.getDetail()}" class="pt-3-half" contenteditable="true"></td>
-                                <td th:text ="*{todo.user.name}" class="pt-3-half" contenteditable="true"></td>
-                                <td th:text ="*{todo.user.oldPrince.name}" class="pt-3-half" contenteditable="true"></td>
-                                <td th:text ="*{todo.user.newPrince.name}" class="pt-3-half" contenteditable="true"></td>
-                                <td>
-                                    <span class="table-remove"><a th:href="@{/deleteTodo/} + *{todo.getId()}"
-                                                                  class="btn btn-danger btn-rounded btn-sm my-0">Remove</a></span>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+         
         </div>
         <!-- Editable table -->
 

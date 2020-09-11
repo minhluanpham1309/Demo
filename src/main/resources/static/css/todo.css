@@ -13,3 +13,11 @@ padding-top: 1.4rem;
 #btnAdd{
     margin: 0 0;
 }
+
+#labelForm #labelTo{
+    margin: 20px;
+}
+
+#formSearch{
+    margin: 20px;
+}

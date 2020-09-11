@@ -8,6 +8,7 @@ package com.example.TestDemo.controller;
 import com.example.TestDemo.model.Info;
 import com.example.TestDemo.model.Info;
 import com.example.TestDemo.model.Todo;
+import com.example.TestDemo.service.ProvinceService;
 import com.example.TestDemo.service.TodoService;
 
 import java.util.ArrayList;
@@ -33,10 +34,13 @@ public class TodoController {
     @Autowired
     private TodoService todoServ;
     
+    @Autowired
+    private ProvinceService proServ;
+    
     @RequestMapping(value = "/listtodo")
-    public String index(Model model, @RequestParam(value="limit", required = false)Integer limit){
+    public String index(Model model){
         model.addAttribute("todoList", todoServ.findAll());
-        
+        model.addAttribute("provinces", proServ.findAll());
         return "listTodo";
     }
     
@@ -59,4 +63,12 @@ public class TodoController {
         model.addAttribute("todoList", todoServ.findAll());
         return "redirect:/listtodo";
     }
+    
+     @RequestMapping(value = "/listAddress")
+    public String listAddress(Model model){
+       
+        model.addAttribute("provinces", proServ.findAll());
+        return "selectList";
+    }
+    
 }
